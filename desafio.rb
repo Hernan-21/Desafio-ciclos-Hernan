@@ -26,9 +26,29 @@ for i in 0..9
 end
 
 
-rows = 5
+if ARGV.length != 1
+  puts "Uso: ruby triangulo_hueco.rb <altura>"
+  exit
+end
 
-rows.times do |i|
-  (i + 1).times { print '*' }
+# Convertir el argumento a un entero
+h = ARGV[0].to_i
+
+# Asegurarse de que la altura es positiva y mayor que 1
+if h <= 1
+  puts "El valor de la altura debe ser un número entero mayor que 1."
+  exit
+end
+
+# Dibujar el triángulo hueco
+for i in 0...h
+  for j in 0..(2*h)
+    # Dibujar los bordes del triángulo
+    if j == h - i || j == h + i || i == h - 1
+      print "*"
+    else
+      print " "
+    end
+  end
   puts
 end
