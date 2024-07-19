@@ -31,19 +31,17 @@ if ARGV.length != 1
   exit
 end
 
-# Convertir el argumento a un entero
+
 h = ARGV[0].to_i
 
-# Asegurarse de que la altura es positiva y mayor que 1
+
 if h <= 1
   puts "El valor de la altura debe ser un número entero mayor que 1."
   exit
 end
 
-# Dibujar el triángulo hueco
 for i in 0...h
   for j in 0..(2*h)
-    # Dibujar los bordes del triángulo
     if j == h - i || j == h + i || i == h - 1
       print "*"
     else
